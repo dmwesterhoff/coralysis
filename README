@@ -1,0 +1,87 @@
+--------  README FILE FOR EDWARDS LAB IMAGE ANALYSIS PROJECT   ---------
+
+ 
+========================================================================
+
+DESCRIPTION:
+
+    This is a port from Tyler Turner's python script which analyzes 
+    image sets using OpenCV to analyze images for object recognition and 
+    detection and hopefully will lead to correct image classification. 
+    The reason for the port is to minimize the performance bottleneck in
+    the image analysis area. C++ and CUDA support offers potential large 
+    performance gains especially on very large image sets the gain 
+    may be significant.
+
+========================================================================
+
+RUNNING THE PROGRAM: 
+    
+    The most important command line argument is the input directory of
+    the image set to be parsed, and can be placed in any position of the
+    arguments. All command line options are preceded by two hyphens
+    followed by the character code. By default output is written to the
+    current working directory with the filename "output.txt",
+    if the filename for output already exists it will be overwritten.
+    
+    getting the help screen: "./coralysis --help"
+    
+    typical invocation: "./coralysis ../imgSet"
+    
+    recurse through directory: "./coralysis --r ../imgSet"
+    
+    write to file foo.txt: "./coralysis ../imgSet --w foo.txt"
+
+
+========================================================================
+
+BUILD REQUIREMENTS:
+
+    --  C++ Libraries 
+    OpenCV 2.4.3 
+    Boost 1.48.0.2  
+    Boost Filesystem 1.46.1
+    
+    -- Command Line Tools
+    build-essential (package)
+ 
+
+========================================================================
+
+RUNTIME REQUIREMENTS:
+
+    UNIX based Operating System
+    
+    Tested on:  Ubuntu 12.04 (precise)
+
+========================================================================
+
+PACKAGING LIST
+
+    coralysis.cpp   -   this is the source for the driver program
+                        and handles file I/O
+    
+    imgutil.cc      -   implementation for the image utility class
+    
+    imgutil.h       -   header for the image utility class
+    
+    formatter.h     -   header for formatting class
+    
+    formatter.cc    -   implementation for formatting class
+    
+    README          -   readme file for the project
+ 
+========================================================================
+
+CHANGES FROM PREVIOUS VERSIONS:
+
+    None yet.
+    
+========================================================================
+
+TODO:
+
+    - Add loading bar for image sets.
+    - Continue by adding more image analysis techniques
+  
+END
